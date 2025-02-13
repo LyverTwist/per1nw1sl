@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Cybernétique</title>
     <style>
-        /* Styles globaux */
         body {
             background-color: #000;
             color: #00ff00;
@@ -15,7 +14,6 @@
             padding: 0;
         }
 
-        /* En-tête */
         header {
             background: #111;
             padding: 20px;
@@ -24,7 +22,6 @@
             border-bottom: 2px solid #00ff00;
         }
 
-        /* Contenu */
         .container {
             width: 80%;
             margin: 20px auto;
@@ -43,27 +40,33 @@
             line-height: 1.6;
         }
 
-        /* Lecteur audio */
-        .audio-container {
+        .code-container {
             margin-top: 20px;
         }
 
-        audio {
-            width: 100%;
-            max-width: 300px;
-        }
-
-        /* Liens */
-        a {
+        input[type="text"] {
+            background: black;
+            border: 1px solid #00ff00;
             color: #00ff00;
-            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            padding: 5px;
+            text-align: center;
         }
 
-        a:hover {
-            text-decoration: underline;
+        button {
+            background: #00ff00;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            margin-left: 10px;
         }
 
-        /* Footer */
+        button:hover {
+            background: #00cc00;
+        }
+
         footer {
             margin-top: 20px;
             padding: 10px;
@@ -71,6 +74,16 @@
             border-top: 2px solid #00ff00;
         }
     </style>
+    <script>
+        function checkCode() {
+            var code = document.getElementById("secretCode").value;
+            if (code.toLowerCase() === "neon42") {
+                window.location.href = "secret.html";
+            } else {
+                alert("Code incorrect. Réessayez.");
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -80,20 +93,15 @@
 
     <div class="container">
         <h1>Bienvenue dans mon univers numérique</h1>
-        <p>Plongez dans mes pensées et mes découvertes sur l'informatique, le hacking éthique et les mystères du cyberespace.</p>
-        
-        <h2>Dernier article : La musique du code</h2>
-        <p>Un bon développeur code en rythme. Voici une playlist pour vous inspirer :</p>
+        <p>Explorez les profondeurs du cyberespace et percez les mystères du code...</p>
 
-        <!-- Lecteur audio -->
-        <div class="audio-container">
-            <audio controls>
-                <source src="musique.mp3" type="audio/mp3">
-                Votre navigateur ne supporte pas l'audio.
-            </audio>
+        <h2>Accès restreint</h2>
+        <p>Seuls ceux qui connaissent le mot de passe peuvent entrer.</p>
+
+        <div class="code-container">
+            <input type="text" id="secretCode" placeholder="Entrez le code">
+            <button onclick="checkCode()">Valider</button>
         </div>
-
-        <p><a href="https://github.com/tonprofil" target="_blank">Suivez-moi sur GitHub</a></p>
     </div>
 
     <footer>
