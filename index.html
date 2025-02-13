@@ -12,57 +12,62 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         header {
             background: #111;
-            padding: 20px;
-            font-size: 24px;
+            padding: 40px;
+            font-size: 32px;
             text-transform: uppercase;
-            border-bottom: 2px solid #00ff00;
-            box-shadow: 0px 0px 10px #00ff00;
+            border-bottom: 4px solid #00ff00;
+            box-shadow: 0px 0px 15px #00ff00;
+            letter-spacing: 2px;
         }
 
         .container {
             width: 80%;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 40px auto;
+            padding: 40px;
             background: #111;
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #00ff00;
+            border: 3px solid #00ff00;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px #00ff00;
             position: relative;
         }
 
         h1, h2 {
             color: #00ff00;
+            margin-bottom: 20px;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 18px;
         }
 
         .code-container {
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         input[type="text"] {
             background: black;
-            border: 1px solid #00ff00;
+            border: 2px solid #00ff00;
             color: #00ff00;
             font-family: 'Courier New', monospace;
-            padding: 5px;
+            padding: 10px;
             text-align: center;
+            font-size: 18px;
         }
 
         button {
             background: #00ff00;
             color: black;
             border: none;
-            padding: 5px 10px;
+            padding: 10px 15px;
             cursor: pointer;
             font-family: 'Courier New', monospace;
+            font-size: 18px;
             margin-left: 10px;
         }
 
@@ -71,9 +76,10 @@
         }
 
         .glitch {
-            font-size: 18px;
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            font-size: 22px;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
             animation: flicker 1.5s infinite alternate;
+            margin-top: 20px;
         }
 
         @keyframes flicker {
@@ -82,27 +88,28 @@
         }
 
         .matrix {
-            font-size: 16px;
+            font-size: 18px;
             white-space: pre-line;
             text-align: left;
             background: rgba(0, 255, 0, 0.1);
-            padding: 10px;
-            border-left: 2px solid #00ff00;
+            padding: 20px;
+            border-left: 4px solid #00ff00;
+            margin-top: 20px;
         }
 
         .cyber-effect {
-            font-size: 14px;
-            color: rgba(0, 255, 0, 0.5);
-            animation: scrollText 5s linear infinite;
+            font-size: 20px;
+            color: rgba(0, 255, 0, 0.7);
+            animation: scrollText 8s linear infinite;
             position: absolute;
-            bottom: 5px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
         }
 
         @keyframes scrollText {
             0% { transform: translateX(-50%) translateY(0); }
-            100% { transform: translateX(-50%) translateY(-20px); }
+            100% { transform: translateX(-50%) translateY(-30px); }
         }
 
         .background-animation {
@@ -118,10 +125,10 @@
         .background-animation div {
             position: absolute;
             background: rgba(0, 255, 0, 0.2);
-            width: 5px;
-            height: 5px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            animation: float 6s infinite linear;
+            animation: float 8s infinite linear;
         }
 
         @keyframes float {
@@ -130,11 +137,12 @@
         }
 
         footer {
-            margin-top: 20px;
-            padding: 10px;
+            margin-top: 40px;
+            padding: 20px;
             background: #111;
-            border-top: 2px solid #00ff00;
-            box-shadow: 0px 0px 10px #00ff00;
+            border-top: 4px solid #00ff00;
+            box-shadow: 0px 0px 20px #00ff00;
+            font-size: 18px;
         }
     </style>
     <script>
@@ -148,11 +156,11 @@
         }
 
         window.onload = function() {
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 100; i++) {
                 let dot = document.createElement("div");
                 dot.style.left = Math.random() * 100 + "%";
                 dot.style.top = Math.random() * 100 + "%";
-                dot.style.animationDuration = (Math.random() * 5 + 3) + "s";
+                dot.style.animationDuration = (Math.random() * 7 + 4) + "s";
                 document.querySelector(".background-animation").appendChild(dot);
             }
         };
@@ -161,18 +169,19 @@
 <body>
     <div class="background-animation"></div>
     <header>
-        Blog Cybernétique
+        Blog Cybernétique - Exploration du Réseau
     </header>
 
     <div class="container">
-        <h1>Bienvenue dans mon univers numérique</h1>
-        <p>Explorez les profondeurs du cyberespace et percez les mystères du code...</p>
+        <h1>Bienvenue dans le Nexus des Données</h1>
+        <p>Découvrez les secrets du cyberespace, explorez les arcanes du code et percez les mystères de l’univers numérique...</p>
 
         <h2>Journal des Signaux</h2>
         <div class="matrix">
             01010100 01101111 01110101 01110100  
             01100101 01110011 00100000 01101100 01100101 01110011  
             01110011 01101001 01100111 01101110 01100001 01110101 01111000 
+            11010010 10101101 01101100 01101111 01101100 01100011 01110011
         </div>
         
         <h2>Accès restreint</h2>
@@ -184,10 +193,10 @@
         </div>
     </div>
 
-    <div class="cyber-effect">>>> Transmission en cours...</div>
+    <div class="cyber-effect">>>> Transmission en cours... Interférence détectée...</div>
 
     <footer>
-        &copy; 2025 - Blog Cybernétique
+        &copy; 2025 - Blog Cybernétique - Portail vers l’Inconnu
     </footer>
 </body>
 </html>
