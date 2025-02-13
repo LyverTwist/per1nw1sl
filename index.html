@@ -138,26 +138,21 @@
         }
     </style>
     <script>
+        {
+        function hashCode(code) {
+    return btoa(code); // Encode en base64 (simple mais évite le texte clair)
 }
-function hashCode(code) {
-    return btoa(code);
-}
-
 function checkCode() {
     var code = document.getElementById("secretCode").value;
-
     var destinations = {
-        "bmVvbjQy": "c2VjcmV0Lmh0bWw=",
-        "YWxwaGE5OQ==": "YWxwaGEuaHRtbA==",
-        "b21lZ2E3Nw==": "b21lZ2EuaHRtbA==",
-        "ZGVsdGEyMQ==": "ZGVsdGEuaHRtbA=="
+        "bmVvbjQy": "secret.html",  // "neon42" encodé en base64
+        "YWxwaGE5OQ==": "alpha.html",  // "alpha99"
+        "b21lZ2E3Nw==": "omega.html",  // "omega77"
+        "ZGVsdGEyMQ==": "delta.html"   // "delta21"
     };
-
     var hashedCode = hashCode(code);
-    
     if (destinations[hashedCode]) {
-        var page = atob(destinations[hashedCode]);
-        window.location.href = page;
+        window.location.href = destinations[hashedCode];
     } else {
         alert("Code incorrect. Réessayez.");
     }
