@@ -157,6 +157,29 @@
     100% { top: 100%; }
 }
         }
+        
+        .log-container {
+    background: #111;
+    border: 2px solid #00ff00;
+    padding: 15px;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0px 0px 10px #00ff00;
+}
+
+#logConsole {
+    font-size: 14px;
+    height: 150px;
+    overflow-y: scroll;
+}
+
     </style>
     <script>
         async function checkCode() {
@@ -190,16 +213,38 @@
         }
         
         window.onload = function() {
-            let container = document.querySelector(".background-animation");
-            for (let i = 0; i < 200; i++) {
-                let particle = document.createElement("div");
-                particle.classList.add("particle");
-                particle.style.left = Math.random() * 100 + "%";
-                particle.style.top = Math.random() * 100 + "%";
-                particle.style.animationDuration = (Math.random() * 5 + 3) + "s";
-                container.appendChild(particle);
-            }
-        };
+    let container = document.querySelector(".background-animation");
+    for (let i = 0; i < 50; i++) {
+        let particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.top = Math.random() * 100 + "%";
+        particle.style.animationDuration = (Math.random() * 5 + 3) + "s";
+        container.appendChild(particle);
+    }
+
+    // Simulation de logs
+    const logs = [
+        "Connexion au serveur...",
+        "Authentification réussie.",
+        "Analyse des données en cours...",
+        "Erreur 404 : réalité non trouvée.",
+        "Transmission cryptée : 56% complète.",
+        "Alerte : activité suspecte détectée.",
+        "Téléchargement terminé."
+    ];
+    let logContainer = document.getElementById("logConsole");
+
+    function addLog() {
+        let newLog = document.createElement("p");
+        newLog.textContent = logs[Math.floor(Math.random() * logs.length)];
+        logContainer.appendChild(newLog);
+        logContainer.scrollTop = logContainer.scrollHeight;
+    }
+
+    setInterval(addLog, 2000);
+};
+
     </script>
          
 </head>
@@ -237,7 +282,12 @@
     </div>
 
     <div class="cyber-effect">>>> Ongoing transmission... please wait...</div>
-
+    
+    <div class="log-container">
+    <h2>Logs du serveur</h2>
+    <div id="logConsole"></div>
+    </div>
+    
     <footer>
         &copy; 2007 - Server provided by OptimIA
     </footer>
