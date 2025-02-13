@@ -140,7 +140,7 @@
     <script>
         function checkCode() {
             var code = document.getElementById("secretCode").value;
-            if (code.toLowerCase() === "neon42") {
+            if (code.toLowerCase() === "radiant") {
                 window.location.href = "secret.html";
             } else {
                 alert("Code incorrect. Réessayez.");
@@ -179,15 +179,15 @@
         <p class="glitch">Seuls ceux qui connaissent le mot de passe peuvent entrer.</p>
 
         <div class="code-container">
-            <input type="text" id="secretCode" placeholder="Entrez le code">
-            <button onclick="checkCode()">Valider</button>
+            <input type="text" id="secretCode" placeholder="Code secret">
+            <button onclick="checkCode()">Connexion</button>
         </div>
     </div>
 
     <div class="cyber-effect">>>> Transmission en cours...</div>
 
     <footer>
-        &copy; 2025 - Blog Cybernétique
+        &copy; 2007 - Blog Cybernétique
     </footer>
 </body>
 </html>
