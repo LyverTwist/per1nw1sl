@@ -139,23 +139,20 @@
     </style>
     <script>
         function checkCode() {
-            var code = document.getElementById("secretCode").value;
-            if (code.toLowerCase() === "radiant") {
-                window.location.href = "secret.html";
+            var code = document.getElementById("secretCode").value.toLowerCase();
+            var destinations = {
+                "neon42": "secret.html",
+                "alpha99": "alpha.html",
+                "omega77": "omega.html",
+                "delta21": "delta.html"
+            };
+
+            if (destinations[code]) {
+                window.location.href = destinations[code];
             } else {
                 alert("Code incorrect. Réessayez.");
             }
         }
-
-        window.onload = function() {
-            for (let i = 0; i < 50; i++) {
-                let dot = document.createElement("div");
-                dot.style.left = Math.random() * 100 + "%";
-                dot.style.top = Math.random() * 100 + "%";
-                dot.style.animationDuration = (Math.random() * 5 + 3) + "s";
-                document.querySelector(".background-animation").appendChild(dot);
-            }
-        };
     </script>
 </head>
 <body>
