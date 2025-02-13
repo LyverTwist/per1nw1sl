@@ -3,14 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chasse au Trésor</title>
+    <title>Blog Cybernétique</title>
+    <style>
+        /* Styles globaux */
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* En-tête */
+        header {
+            background: #111;
+            padding: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #00ff00;
+        }
+
+        /* Contenu */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #111;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #00ff00;
+        }
+
+        h1, h2 {
+            color: #00ff00;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Lecteur audio */
+        .audio-container {
+            margin-top: 20px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Liens */
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #111;
+            border-top: 2px solid #00ff00;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue dans la chasse au trésor</h1>
-    <p>Saurez-vous trouver le lien caché ?</p>
 
-    <!-- Indice caché -->
-    <p style="display:none;">https://drive.google.com/xxxxx</p>
+    <header>
+        Blog Cybernétique
+    </header>
+
+    <div class="container">
+        <h1>Bienvenue dans mon univers numérique</h1>
+        <p>Plongez dans mes pensées et mes découvertes sur l'informatique, le hacking éthique et les mystères du cyberespace.</p>
+        
+        <h2>Dernier article : La musique du code</h2>
+        <p>Un bon développeur code en rythme. Voici une playlist pour vous inspirer :</p>
+
+        <!-- Lecteur audio -->
+        <div class="audio-container">
+            <audio controls>
+                <source src="musique.mp3" type="audio/mp3">
+                Votre navigateur ne supporte pas l'audio.
+            </audio>
+        </div>
+
+        <p><a href="https://github.com/tonprofil" target="_blank">Suivez-moi sur GitHub</a></p>
+    </div>
+
+    <footer>
+        &copy; 2025 - Blog Cybernétique
+    </footer>
 
 </body>
 </html>
