@@ -136,6 +136,27 @@
             border-top: 2px solid #00ff00;
             box-shadow: 0px 0px 10px #00ff00;
         }
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(0, 255, 0, 0.8);
+            animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+        }
     </style>
     <script>
         async function checkCode() {
@@ -184,6 +205,7 @@
 </head>
 <body>
     <div class="background-animation"></div>
+    <div class="scanline"></div>
     <header>
         Optimia_corp/secure_connect
     </header>
