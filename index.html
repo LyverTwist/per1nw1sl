@@ -26,7 +26,7 @@
 
         .container {
             width: 80%;
-            margin: 20px auto;
+            margin: 50px auto;
             padding: 20px;
             background: #111;
             border: 2px solid #00ff00;
@@ -44,7 +44,7 @@
         }
 
         .code-container {
-            margin-top: 20px;
+            margin-top: 50px;
         }
 
         input[type="text"] {
@@ -130,7 +130,7 @@
         }
 
         footer {
-            margin-top: 20px;
+            margin-top: 50px;
             padding: 10px;
             background: #111;
             border-top: 2px solid #00ff00;
@@ -152,7 +152,7 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error('Erreur réseau ou serveur');
+                    throw new Error('Network or system error');
                 }
 
                 const data = await response.json();
@@ -160,17 +160,15 @@
                 if (data.redirect) {
                     window.location.href = data.redirect;
                 } else {
-                    alert(data.error || 'Erreur inconnue');
+                    alert(data.error || 'Unknown error.');
                 }
             } catch (error) {
                 console.error('Erreur :', error);
-                alert('Erreur ! Mot de passe incorrect');
+                alert('Wrong password. Please retry.');
             }
         }
     </script>
-        
-    
-        
+         
 </head>
 <body>
     <div class="background-animation"></div>
@@ -187,6 +185,9 @@
             01010100 01101111 01110101 01110100 01100101 01110011 00100000 01101100 01100101 01110011   
             01100101 01110011 00100000 01101100 01100101 01110011 01101110 01100001 01110101 01111000   
             01110011 01101001 01100111 01101110 01100001 01110101 01111000 01101100 01100101 01110011
+            01010100 01101111 01110101 01110100 01100101 01110011 00100000 01101100 01100101 01110011   
+            01100101 01110011 00100000 01101100 01100101 01110011 01101110 01100001 01110101 01111000   
+            01110011 01101001 01100111 01101110 01100001 01110101 01111000 01101100 01100101 01110011
         </div>
         
         <h2>Private access</h2>
@@ -198,7 +199,7 @@
         </div>
     </div>
 
-    <div class="cyber-effect">>>> Transmission en cours...</div>
+    <div class="cyber-effect">>>> Ongoing transmission... please wait...</div>
 
     <footer>
         &copy; 2007 - Server provided by OptimIA
