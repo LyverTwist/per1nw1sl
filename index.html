@@ -12,7 +12,6 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            overflow: hidden;
         }
 
         header {
@@ -21,7 +20,6 @@
             font-size: 24px;
             text-transform: uppercase;
             border-bottom: 2px solid #00ff00;
-            box-shadow: 0px 0px 10px #00ff00;
         }
 
         .container {
@@ -32,7 +30,6 @@
             border: 2px solid #00ff00;
             border-radius: 10px;
             box-shadow: 0px 0px 10px #00ff00;
-            position: relative;
         }
 
         h1, h2 {
@@ -90,77 +87,26 @@
             border-left: 2px solid #00ff00;
         }
 
-        .cyber-effect {
-            font-size: 14px;
-            color: rgba(0, 255, 0, 0.5);
-            animation: scrollText 5s linear infinite;
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        @keyframes scrollText {
-            0% { transform: translateX(-50%) translateY(0); }
-            100% { transform: translateX(-50%) translateY(-20px); }
-        }
-
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .background-animation div {
-            position: absolute;
-            background: rgba(0, 255, 0, 0.2);
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            animation: float 6s infinite linear;
-        }
-
-        @keyframes float {
-            from { transform: translateY(0); opacity: 1; }
-            to { transform: translateY(-100vh); opacity: 0; }
-        }
-
         footer {
             margin-top: 20px;
             padding: 10px;
             background: #111;
             border-top: 2px solid #00ff00;
-            box-shadow: 0px 0px 10px #00ff00;
         }
     </style>
     <script>
-        {
-        function hashCode(code) {
-    return btoa(code); // Encode en base64 (simple mais évite le texte clair)
-}
-function checkCode() {
-    var code = document.getElementById("secretCode").value;
-    var destinations = {
-        "bmVvbjQy": "secret.html",  // "neon42" encodé en base64
-        "YWxwaGE5OQ==": "alpha.html",  // "alpha99"
-        "b21lZ2E3Nw==": "omega.html",  // "omega77"
-        "ZGVsdGEyMQ==": "delta.html"   // "delta21"
-    };
-    var hashedCode = hashCode(code);
-    if (destinations[hashedCode]) {
-        window.location.href = destinations[hashedCode];
-    } else {
-        alert("Code incorrect. Réessayez.");
-    }
-}
+        function checkCode() {
+            var code = document.getElementById("secretCode").value;
+            if (code.toLowerCase() === "neon42") {
+                window.location.href = "secret.html";
+            } else {
+                alert("Code incorrect. Réessayez.");
+            }
+        }
     </script>
 </head>
 <body>
-    <div class="background-animation"></div>
+
     <header>
         Blog Cybernétique
     </header>
@@ -180,15 +126,14 @@ function checkCode() {
         <p class="glitch">Seuls ceux qui connaissent le mot de passe peuvent entrer.</p>
 
         <div class="code-container">
-            <input type="text" id="secretCode" placeholder="Code secret">
-            <button onclick="checkCode()">Connexion</button>
+            <input type="text" id="secretCode" placeholder="Entrez le code">
+            <button onclick="checkCode()">Valider</button>
         </div>
     </div>
-
-    <div class="cyber-effect">>>> Transmission en cours...</div>
 
     <footer>
         &copy; 2007 - Blog Cybernétique
     </footer>
+
 </body>
 </html>
