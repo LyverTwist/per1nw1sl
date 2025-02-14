@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paramètres de pr1nw1sl</title>
+    <title>pr1nw1sl - profile</title>
     <style>
         body {
             background-color: #000;
@@ -80,22 +80,71 @@
             0% { opacity: 1; }
             100% { opacity: 0.6; }
         }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(0, 255, 0, 0.5);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: float 5s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
     </style>
+    <script>
+        function showError() {
+            alert("Erreur 403 - Action interdite.");
+        }
+
+        window.onload = function() {
+            let container = document.createElement("div");
+            container.classList.add("background-animation");
+            document.body.appendChild(container);
+            for (let i = 0; i < 50; i++) {
+                let particle = document.createElement("div");
+                particle.classList.add("particle");
+                particle.style.left = Math.random() * 100 + "%";
+                particle.style.top = Math.random() * 100 + "%";
+                particle.style.animationDuration = (Math.random() * 5 + 3) + "s";
+                container.appendChild(particle);
+            }
+        };
+    </script>
 </head>
 <body>
-    <header>Paramètres de compte - pr1nw1sl</header>
+    <header>pr1nw1sl - profile</header>
     
     <div class="container">
-        <h2>Informations du compte</h2>
-        <div class="setting">Nom d'utilisateur: <span class="censored">█████████</span></div>
+        <h2>Account data</h2>
+        <div class="setting">Registered name: <span class="censored">█████████</span></div>
         <div class="setting">Email: <span class="censored">██████████████</span></div>
-        <div class="setting">Mot de passe: <span class="censored">██████████████</span></div>
-        <div class="setting">Date de création: <span class="censored">██/██/████</span></div>
+        <div class="setting">Password: <span class="censored">██████████████</span></div>
+        <div class="setting">Creation date: <span class="censored">██/██/████</span></div>
+        <div class="setting">Last connexion: <span class="censored">██████████</span></div>
+        <div class="setting">IP Address: <span class="censored">███.███.███.███</span></div>
 
         <h2>Actions</h2>
-        <button>Modifier</button>
-        <button>Supprimer le compte</button>
+        <button onclick="showError()">Change parameters</button>
+        <button onclick="showError()">Delete account</button>
         <p class="glitch">Erreur 404 - Certaines données sont inaccessibles...</p>
     </div>
+
+    <footer>
+        &copy; 2007 - Server provided by OptimIA
+    </footer>
 </body>
 </html>
