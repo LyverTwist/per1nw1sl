@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal de pr1nw1sl</title>
+    <title>Paramètres de pr1nw1sl</title>
     <style>
         body {
             background-color: #000;
@@ -25,7 +25,7 @@
         }
 
         .container {
-            width: 80%;
+            width: 60%;
             margin: 20px auto;
             padding: 20px;
             background: #111;
@@ -33,24 +33,46 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px #00ff00;
             position: relative;
+        }
+
+        h1, h2 {
+            color: #00ff00;
+        }
+
+        .setting {
+            margin: 15px 0;
+            padding: 10px;
+            background: #222;
+            border: 1px solid #00ff00;
             text-align: left;
         }
 
-        .entry {
-            margin: 20px 0;
-            padding: 10px;
-            background: #000;
-            border-left: 4px solid #00ff00;
+        .censored {
+            background: black;
+            color: black;
+            border: 1px solid #00ff00;
+            display: inline-block;
+            width: 80%;
+            text-align: center;
         }
 
-        .censored {
+        button {
             background: #00ff00;
-            color: #00ff00;
-            padding: 0 5px;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #00cc00;
         }
 
         .glitch {
-            display: inline-block;
+            font-size: 18px;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
             animation: flicker 1.5s infinite alternate;
         }
 
@@ -58,78 +80,22 @@
             0% { opacity: 1; }
             100% { opacity: 0.6; }
         }
-
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(0, 255, 0, 0.5);
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            animation: float 5s infinite linear;
-        }
-
-        @keyframes float {
-            from { transform: translateY(100vh); opacity: 1; }
-            to { transform: translateY(-10vh); opacity: 0; }
-        }
     </style>
-    <script>
-        window.onload = function() {
-            let container = document.querySelector(".background-animation");
-            for (let i = 0; i < 50; i++) {
-                let particle = document.createElement("div");
-                particle.classList.add("particle");
-                particle.style.left = Math.random() * 100 + "%";
-                particle.style.top = Math.random() * 100 + "%";
-                particle.style.animationDuration = (Math.random() * 5 + 3) + "s";
-                container.appendChild(particle);
-            }
-        };
-    </script>
 </head>
 <body>
-    <div class="background-animation"></div>
-    <header>
-        Journal personnel - pr1nw1sl
-    </header>
-
+    <header>Paramètres de compte - pr1nw1sl</header>
+    
     <div class="container">
-        <h1>Entrées du journal</h1>
-        
-        <div class="entry">
-            <h2>Entrée du 03/02/2025</h2>
-            <p>Tout semble aller bien aujourd'hui, mais j'ai l'impression que quelque chose ne tourne pas rond. J'ai reçu un message étrange : <span class="glitch">[ERREUR]</span>.</p>
-        </div>
+        <h2>Informations du compte</h2>
+        <div class="setting">Nom d'utilisateur: <span class="censored">█████████</span></div>
+        <div class="setting">Email: <span class="censored">██████████████</span></div>
+        <div class="setting">Mot de passe: <span class="censored">██████████████</span></div>
+        <div class="setting">Date de création: <span class="censored">██/██/████</span></div>
 
-        <div class="entry">
-            <h2>Entrée du 29/01/2025</h2>
-            <p>J'ai enfin réussi à localiser le fichier. Mais quand j'ai voulu l'ouvrir... il ne restait que du <span class="censored">████████</span>.</p>
-        </div>
-
-        <div class="entry">
-            <h2>Entrée du 17/01/2025</h2>
-            <p>Les logs montrent une activité suspecte. Quelqu'un a tenté d'accéder à mon compte hier soir. Heureusement, mon système de sécurité a détecté l'intrusion et a immédiatement <span class="censored">████████████</span> toutes les données.</p>
-        </div>
-
-        <div class="entry">
-            <h2>Entrée du 04/01/2025</h2>
-            <p>Impossible de me souvenir du contenu de cette note. Tout ce qui reste, c'est un fragment :</p>
-            <blockquote class="glitch">"Ne jamais faire confiance à..."</blockquote>
-        </div>
+        <h2>Actions</h2>
+        <button>Modifier</button>
+        <button>Supprimer le compte</button>
+        <p class="glitch">Erreur 404 - Certaines données sont inaccessibles...</p>
     </div>
-
-    <footer>
-        &copy; 2025 - Journal de pr1nw1sl - [DONNÉES SUPPRIMÉES]
-    </footer>
 </body>
 </html>
